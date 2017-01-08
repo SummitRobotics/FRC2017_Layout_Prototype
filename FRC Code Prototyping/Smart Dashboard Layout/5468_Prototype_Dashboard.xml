@@ -1,0 +1,82 @@
+<xml version="1.0">
+<dashboard>
+	<widget field="Left Drive Power" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="0" y="423"/>
+	</widget>
+	<widget field="Vision Thread Stopped" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="0" y="402"/>
+	</widget>
+	<widget field="Autonomous Settings" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="0" y="381"/>
+	</widget>
+	<widget field="Vision Aligned" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="0" y="360"/>
+	</widget>
+	<widget field="Left Shooter Value" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="21" y="316"/>
+	</widget>
+	<widget field="Auto mode" type="String Chooser" class="edu.wpi.first.smartdashboard.gui.elements.Chooser">
+		<location x="0" y="316"/>
+	</widget>
+	<widget field="Target Found" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="0" y="295"/>
+	</widget>
+	<widget field="Threads Running" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="0" y="274"/>
+	</widget>
+	<widget field="Shooter Lifter Value" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="0" y="253"/>
+	</widget>
+	<widget field="Shooter State" type="String" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="0" y="232"/>
+	</widget>
+	<widget field="Right Drive Power" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="0" y="211"/>
+	</widget>
+	<widget field="PID Turn Value" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="0" y="190"/>
+	</widget>
+	<widget field="Arm Lifter Value" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="0" y="169"/>
+	</widget>
+	<widget field="PID Forwards Value" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="0" y="148"/>
+	</widget>
+	<widget field="Arm State" type="String" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="0" y="127"/>
+	</widget>
+	<widget field="Right Shooter Value" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="0" y="106"/>
+	</widget>
+	<widget field="AUX Motor Value" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="0" y="85"/>
+	</widget>
+	<widget field="Autonomous Shot" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="0" y="64"/>
+	</widget>
+	<widget field="Y" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="0" y="43"/>
+	</widget>
+	<widget field="X" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="0" y="22"/>
+	</widget>
+	<widget field="Autonomous Program" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="0" y="1"/>
+	</widget>
+	<static-widget class="edu.wpi.first.smartdashboard.gui.elements.ConnectionIndicator">
+		<location x="254" y="177"/>
+	</static-widget>
+	<static-widget class="edu.wpi.first.smartdashboard.gui.elements.Label">
+		<location x="160" y="186"/>
+		<property name="Text" value="Robot Connected:"/>
+	</static-widget>
+	<static-widget class="edu.wpi.first.smartdashboard.gui.elements.Label">
+		<location x="0" y="0"/>
+		<width>1332</width>
+		<height>122</height>
+		<property name="Text" value="Info"/>
+	</static-widget>
+</dashboard>
+<live-window>
+</live-window>
+</xml>
