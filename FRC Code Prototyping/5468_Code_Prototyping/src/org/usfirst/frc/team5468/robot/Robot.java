@@ -79,43 +79,22 @@ public class Robot extends IterativeRobot
     	 * Set a fallback value for the autonomous program index 
     	 * (incase we can't get the option from the smart dashboard)
     	*/
-    	autonomousProgramIndex = -1;
     	
-    	//Attempt to get the choosen autonomous option from the smart dashboard
+    	//Attempt to get the chosen autonomous option from the smart dashboard
     	try
     	{
-	    	SendableChooser<String> chooser = (SendableChooser<String>)SmartDashboard.getData(AUTO_CHOOSER_LABEL);
 	    	
-	    	autonomousProgramIndex = chooser.getSelected();
+	    	autonomousProgram = programManager.GetAutonomousProgram(autoProgramChooser.getSelected());
     	}catch (Exception e)
     	{
     		SmartDashboard.putString(INFO_LABEL, "Couldn't get choosen auto option: " + e.getMessage());
     	}
-    	
-    	//Only look for an autonomous program if the index is within a valid range
-    	//As a fall back (and feature), autonomous won't run if the index is incorrect
-    	if(autonomousProgramIndex >= 0 && autonomousProgramIndex < programManager.AutonomousProgramCount)
-    	{
-    		//Attempt to assign the proper autonomous program to use
-	    	try
-	    	{
-	    		autonomousProgram = programManager.GetAutonomousProgram(autonomousProgramIndex);
-	    	} catch (Exception e)
-	    	{
-	    		//Throw an error if an autonomous program cannot be found (or if there was another problem)
-	    		SmartDashboard.putString(INFO_LABEL, e.getMessage());
-	    	}
 	    	
-	    	//Only run autonomous if the proper autonomous program was found
-	    	if(autonomousProgram != null)
-	    	{
-	    		willRunAutonomous = true;
-	    	}
-    	}else
-    	{
-    		//Do not run autonomous
-    		willRunAutonomous = false;
-    	}
+	    //Only run autonomous if the proper autonomous program was found
+	    if(autonomousProgram != null)
+	    {
+	    	willRunAutonomous = true;
+	    }
     	
     	if(willRunAutonomous && autonomousProgram != null)
     	{
@@ -148,24 +127,10 @@ public class Robot extends IterativeRobot
     	//Attempt to get the choosen teleop option from the smart dashboard
     	try
     	{
-	    	SendableChooser chooser = (SendableChooser)SmartDashboard.getData(TELEOP_CHOOSER_LABEL);
-	    	
-	    	teleopProgramIndex = (int)chooser.getSelected();
+	    	teleopProgram = programManager.GetTeleopProgram(teleopProgramChooser.getSelected());
     	}catch (Exception e)
     	{
     		SmartDashboard.putString(INFO_LABEL, "Couldn't get choosen teleop option: " + e.getMessage());
-    	}
-    	
-    	if(teleopProgramIndex >= 0 && teleopProgramIndex < programManager.TeleopProgramCount)
-    	{
-    		try
-    		{
-    			teleopProgram = programManager.GetTeleopProgram(teleopProgramIndex);
-    		} catch (Exception e)
-    		{
-    			//Throw an error if a teleop program cannot be found (or if there was another problem)
-	    		SmartDashboard.putString(INFO_LABEL, e.getMessage());
-    		}
     	}
     	
     	if(teleopProgram != null)
@@ -196,11 +161,12 @@ public class Robot extends IterativeRobot
     
     void SetupAutonomousProgramOptions()
     {
-    	autoProgramChooser.addDefault("None", -1);
+    	autoProgramChooser.addDefault("None", "None");
     	
     	for(int i = 0; i < programManager.AutonomousProgramCount; i++)
     	{
-    		autoProgramChooser.addObject(programManager.GetAutonomousProgram(i).ProgramName, i);
+    		String programName = programManager.GetAutonomousProgram(i).ProgramName;
+    		autoProgramChooser.addObject(programName, programName);
     	}
     	
     	SmartDashboard.putData(AUTO_CHOOSER_LABEL, autoProgramChooser);
@@ -210,13 +176,14 @@ public class Robot extends IterativeRobot
     {
     	for(int i = 0; i < programManager.TeleopProgramCount; i++)
     	{
+    		String programName = programManager.GetTeleopProgram(i).ProgramName;
     		if(i == 0)
     		{
-    			teleopProgramChooser.addDefault(programManager.GetTeleopProgram(i).ProgramName, i);
+    			teleopProgramChooser.addDefault(programName, programName);
     		}
     		else
     		{
-    			teleopProgramChooser.addObject(programManager.GetTeleopProgram(i).ProgramName, i);
+    			teleopProgramChooser.addObject(programName, programName);
     		}
     	}
     	
