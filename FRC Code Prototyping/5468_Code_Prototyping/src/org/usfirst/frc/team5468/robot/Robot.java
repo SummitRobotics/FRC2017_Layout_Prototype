@@ -46,6 +46,8 @@ public class Robot extends IterativeRobot
     	SetupTeleopProgramOptions();
     	
     	SetupJoysticks();
+    	
+    	//WORKS!
     }
 	
 	/**
