@@ -4,9 +4,12 @@ FRC WPI documentation: http://first.wpi.edu/FRC/roborio/release/docs/java/
 
 # How to import project into Eclipse
 
-1. Download project as a .ZIP
-2. Extract the .ZIP to a location
-3. Open Eclipse and set the workspace to the "FRC Code Prototyping" folder (it is located in the FRC2017_Layout_Prototype-master folder that you extracted. There will probably be another FRC2017_Layout_Prototype-master folder - it is probably within that)
-4. In Eclipse, go to File -> Open Projects from File System...
-5. For the "Import source" field, click the "Directory" button, then navigate to the folder named "5468_Code_Prototyping" inside the "FRC Code Prototyping" folder you previously set as the workspace, then click "Finish"
-6. You're all set!
+1. Download project as a .ZIP file (located in the "Clone or download" dropdown)
+
+2. Extract the downloaded .ZIP to your Eclipse workspace
+
+3. In Eclipse, go to File -> Open Projects from File System...
+
+4. In the dialog that opens, click the "Directory..." button and navigate to the "5468_Code_Prototyping" folder located within the "FRC2017_Layout_Prototype-master" folder you just extracted
+
+5. Click "Finish", and you're done!
