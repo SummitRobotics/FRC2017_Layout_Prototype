@@ -1,6 +1,8 @@
 # FRC2017_Layout_Prototype
 
-FRC WPI documentation: http://first.wpi.edu/FRC/roborio/release/docs/java/
+-    Main 5468 FRC 2017 project: https://github.com/SummitRobotics/FRC2017
+
+-    FRC WPI documentation: http://first.wpi.edu/FRC/roborio/release/docs/java/
 
 # How to import project into Eclipse
 
